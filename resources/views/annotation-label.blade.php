@@ -1,37 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Resume Parser</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-</head>
-<style>
-    pre {
-        white-space: pre-wrap; /* Since CSS 2.1 */
-        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-        white-space: -o-pre-wrap; /* Opera 7 */
-        word-wrap: break-word; /* Internet Explorer 5.5+ */
-        line-height: 2rem;
-        word-break: keep-all;
-    }
-</style>
-<body>
 @include('components.header')
 <div id="content">
     <div class="row" id="annotation">
@@ -70,7 +36,7 @@
                 <span class="badge badge-light">Email Address</span>
                 <span class="badge badge-dark">Location</span>
             </div>
-            <pre id="editor" contenteditable="true">{{ $text }}</pre>
+            <pre id="editor" contenteditable="true">{{$content}}</pre>
         </div>
         <div class="col-1"></div>
     </div>
@@ -97,41 +63,70 @@
                 var end = rootOffset(editable, {node: ec, offset: eo});
             }
 
-            arr_temp.push(label, text_selection, start.offset, end.offset)
+            // arr_temp.push(label, text_selection, start.offset, end.offset)
+            var obj = {
+                label: label,
+                text_selection: text_selection,
+                start: start.offset,
+                end: end.offset
+            }
 
-            this.annotation.push(arr_temp)
+            this.annotation.push(obj)
             var content_annotations = ""
             this.annotation.forEach(function (ele) {
-                switch (ele[0]) {
+                switch (ele.label) {
                     case "Name":
-                        var content_annotation = '<div><span class="badge badge-primary">' + ele[1] + '</span></div>'
+                        var content_annotation = '<div><span class="badge badge-primary">' + ele.text_selection + '</span></div>'
                         break;
                     case "Graduation Year":
-                        var content_annotation = '<div><span class="badge badge-secondary">' + ele[1] + '</span></div>'
+                        var content_annotation = '<div><span class="badge badge-secondary">' + ele.text_selection + '</span></div>'
                         break;
                     case "College Name":
-                        var content_annotation = '<div><span class="badge badge-success">' + ele[1] + '</span><div>'
+                        var content_annotation = '<div><span class="badge badge-success">' + ele.text_selection + '</span><div>'
                         break;
                     case "Skills":
-                        var content_annotation = '<div><span class="badge badge-danger">' + ele[1] + '</span></div>'
+                        var content_annotation = '<div><span class="badge badge-danger">' + ele.text_selection + '</span></div>'
                         break;
                     case "Degree":
-                        var content_annotation = '<div><span class="badge badge-warning">' + ele[1] + '</span></div>'
+                        var content_annotation = '<div><span class="badge badge-warning">' + ele.text_selection + '</span></div>'
                         break;
                     case "Designation":
-                        var content_annotation = '<div><span class="badge badge-info">' + ele[1] + '</span></div>'
+                        var content_annotation = '<div><span class="badge badge-info">' + ele.text_selection + '</span></div>'
                         break;
                     case "Email Address":
-                        var content_annotation = '<div><span class="badge badge-dark">' + ele[1] + '</span></div>'
+                        var content_annotation = '<div><span class="badge badge-dark">' + ele.text_selection + '</span></div>'
                         break;
                     case "Location":
-                        var content_annotation = '<div><span class="badge badge-warning">' + ele[1] + '</span></div>'
+                        var content_annotation = '<div><span class="badge badge-warning">' + ele.text_selection + '</span></div>'
                         break;
                 }
                 content_annotations += content_annotation
             });
             document.getElementById("list-badge").innerHTML = content_annotations
         }
+    }
+
+    function Submit() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        })
+
+        $.ajax({
+            url: '/annotation-data',
+            type: 'POST',
+            data: {
+                data: annotation,
+                file_name: '{{ $file_name }}',
+            },
+            success: function (data) {
+                console.log('ok')
+            },
+            error: function (data) {
+                console.log('fail')
+            }
+        });
     }
 
     var rootOffset = function (root, point) {
@@ -174,27 +169,4 @@
         return length;
     };
 
-    function Submit() {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        })
-        var formdata = new FormData();
-        formdata.append('CSRF', '<?php echo @csrf_token() ?>'),
-            formdata.append('annotation', this.annotation)
-        $.ajax({
-            url: '/test',
-            type: 'POST',
-            data: formdata,
-            contentType: false,
-            processData: false,
-            success: function (data) {
-                console.log('ok')
-            },
-            error: function (data) {
-                console.log('fail')
-            }
-        });
-    }
 </script>

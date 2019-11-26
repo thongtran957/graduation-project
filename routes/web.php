@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::get('/annotation', 'AnnotationController@index')->name('annotation.index');
 Route::post('/annotation', 'AnnotationController@uploadFile')->name('annotation.uploadfile');
-Route::post('/test', 'AnnotationController@writeFile')->name('test');
+Route::post('/annotation-data', 'AnnotationController@writeFile')->name('annotation.writeFile');
+
+Route::post('/test', 'AnnotationController@')->name('test');
