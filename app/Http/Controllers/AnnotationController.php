@@ -51,7 +51,6 @@ class AnnotationController extends Controller
         }
         $obj->annotation = $annotations;
 
-//        $file_json_name = public_path() . '/files/traindata.json';
         $file_json_name = '/home/thongtran/projects/cv-extraction/traindata1.json';
         $file = fopen($file_json_name, 'w+');
         fwrite($file, json_encode($obj));

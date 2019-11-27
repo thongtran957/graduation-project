@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="card" style="margin-bottom: 15px">
+                    <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div class="card-header-title">Card After Label</div>
                         </div>
@@ -64,10 +64,6 @@
                             <div id="list-badge">
                             </div>
                         </div>
-                    </div>
-
-                    <div>
-                        <button onclick="Submit()" class="btn btn-pill btn-sm btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
@@ -92,6 +88,7 @@
                     var end = rootOffset(editable, {node: ec, offset: eo});
                 }
 
+                // arr_temp.push(label, text_selection, start.offset, end.offset)
                 var obj = {
                     label: label,
                     text_selection: text_selection,
