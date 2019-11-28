@@ -23,5 +23,15 @@
               </span>
             </a>
         </li>
+        <li class="sidebar-nav-item">
+            <a href="{{ route('train.index') }}" class="sidebar-nav-link">
+              <span class="sidebar-nav-icon">
+                <i data-feather="layout"></i>
+              </span>
+                <span class="sidebar-nav-name">
+                Train
+              </span>
+            </a>
+        </li>
     </ul>
 </div>

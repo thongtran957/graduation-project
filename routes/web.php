@@ -14,7 +14,13 @@
 Route::get('/', function () {
     return view('dashboard');
 });
+
 Route::get('/annotation', 'AnnotationController@index')->name('annotation.index');
 Route::post('/annotation', 'AnnotationController@uploadFile')->name('annotation.uploadfile');
+Route::get('/annotation2/{file_name}', 'AnnotationController@uploadFile2')->name('annotation.uploadfile2');
 Route::post('/annotation-data', 'AnnotationController@writeFile')->name('annotation.writeFile');
+
+Route::get('/train', 'TrainController@index')->name('train.index');
+Route::get('/train/{file_name}', 'TrainController@train')->name('train.uploadfile');
+
 

@@ -147,9 +147,12 @@
                 data: {
                     data: annotation,
                     file_name: '{{ $file_name }}',
+                    CSRF: '{{ csrf_token() }}'
                 },
                 success: function (data) {
-                    console.log('ok')
+                    if(data.status == "success"){
+                        window.location.href = "{{URL::to('/annotation')}}"
+                    }
                 },
                 error: function (data) {
                     console.log('fail')
@@ -196,7 +199,6 @@
             }
             return length;
         };
-
     </script>
 @endsection()
 
