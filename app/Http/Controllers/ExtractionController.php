@@ -12,5 +12,6 @@ class ExtractionController extends Controller
 
     public function uploadFile(Request $request){
         dd($request);
+        //run file python
     }
 }
