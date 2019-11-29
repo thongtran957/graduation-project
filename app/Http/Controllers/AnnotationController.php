@@ -83,14 +83,14 @@ class AnnotationController extends Controller
             }
             $obj->annotation = $annotations;
 
-            $file_json_name = '/home/thongtran/projects/cv-extraction/trains' . $file_train;
+            $file_json_name = '/home/thongtran/projects/cv-extraction/trains/' . $file_train;
             $file = fopen($file_json_name, 'w+');
             fwrite($file, json_encode($obj));
             fclose($file);
 
             FileResume::where('file_name', $request->file_name)->update([
                 'annotate' => 1,
-                'file_train' => $file_train,
+                'file_train' => $file_json_name,
             ]);
 
             $msg = "You have annotated success";
@@ -102,13 +102,6 @@ class AnnotationController extends Controller
             $list_file = FileResume::where('annotate', 0)->get()->toArray();
             return view('annotation', compact('list_file'));
         }
-    }
-
-    public function test()
-    {
-//        dd(123);
-//        $result = shell_exec('/usr/bin/python3 /home/thongtran/projects/cv-extraction/main.py');
-//        dd($result);
     }
 
 }

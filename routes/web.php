@@ -22,5 +22,6 @@ Route::post('/annotation-data', 'AnnotationController@writeFile')->name('annotat
 
 Route::get('/train', 'TrainController@index')->name('train.index');
 Route::get('/train/{file_name}', 'TrainController@train')->name('train.uploadfile');
+Route::get('/test/{a}', 'TrainController@test');
 
 

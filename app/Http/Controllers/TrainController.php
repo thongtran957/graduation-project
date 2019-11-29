@@ -14,7 +14,14 @@ class TrainController extends Controller
     }
 
     public function train($file_train){
-        dd($file_train);
+        $cmd =  '/usr/bin/python3 /home/thongtran/projects/cv-extraction/train.py' . ' ' . $file_train;
+        $result = shell_exec($cmd);
+        dd($result);
     }
 
+    public function test($a){
+        $cmd =  '/usr/bin/python3 /home/thongtran/projects/cv-extraction/train.py' . ' ' . '/home/thongtran/projects/cv-extraction/traindata.json';
+        $result = shell_exec($cmd);
+        dd($result);
+    }
 }
