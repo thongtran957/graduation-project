@@ -12,7 +12,16 @@
                     </span>
             </a>
         </li>
-
+        <li class="sidebar-nav-item">
+            <a href="{{ route('extraction.index') }}" class="sidebar-nav-link">
+              <span class="sidebar-nav-icon">
+                <i data-feather="layout"></i>
+              </span>
+                <span class="sidebar-nav-name">
+                Extraction
+              </span>
+            </a>
+        </li>
         <li class="sidebar-nav-item">
             <a href="{{ route('annotation.index') }}" class="sidebar-nav-link">
               <span class="sidebar-nav-icon">

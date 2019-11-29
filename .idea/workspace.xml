@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25548ded-ad24-4f0d-bee3-095f7b059433" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/extraction.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AnnotationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AnnotationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/annotation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annotation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -161,7 +163,7 @@
       <workItem from="1574754603200" duration="14761000" />
       <workItem from="1574867831641" duration="8802000" />
       <workItem from="1574951006566" duration="10268000" />
-      <workItem from="1574997604031" duration="2627000" />
+      <workItem from="1574997604031" duration="3443000" />
     </task>
     <servers />
   </component>

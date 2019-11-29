@@ -19,7 +19,7 @@
                                   method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label>Upload file CV here:</label>
+                                    <label>Upload file resume here: (only support .pdf)</label>
                                     <input type="file" class="form-control-file" name="file">
                                 </div>
                                 <input type="submit" class="btn-sm btn-primary" value="Submit">

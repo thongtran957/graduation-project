@@ -24,4 +24,6 @@ Route::get('/train', 'TrainController@index')->name('train.index');
 Route::get('/train/{file_name}', 'TrainController@train')->name('train.uploadfile');
 Route::get('/test/{a}', 'TrainController@test');
 
+Route::get('/extraction', 'ExtractionController@index')->name('extraction.index');
+Route::post('/extraction', 'ExtractionController@uploadFile')->name('extraction.uploadfile');
 

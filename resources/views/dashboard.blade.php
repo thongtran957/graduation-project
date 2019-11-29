@@ -24,34 +24,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div class="card-header-title">Featured</div>
-                        </div>
-                        <div class="card-body collapse show" id="card1">
-                            <h4 class="card-title">Special title treatment</h4>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-header">
-                            Featured
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Special title treatment</h4>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 @endsection()
