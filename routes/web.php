@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('extraction');
 });
 
 Route::get('/annotation', 'AnnotationController@index')->name('annotation.index');

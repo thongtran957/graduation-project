@@ -28,6 +28,31 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <div class="card-header-title">Result from regular expression</div>
+                        </div>
+                        <div class="card-body collapse show" id="card1">
+                            <pre>{!! $result_main ?? '' !!}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <div class="card-header-title">Result from NER model</div>
+                        </div>
+                        <div class="card-body collapse show" id="card1">
+                            <pre>{!! $result_NER ?? '' !!}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 @endsection()
