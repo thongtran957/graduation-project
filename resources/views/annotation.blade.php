@@ -50,23 +50,33 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($list_file as $value)
+                                @if(!empty($list_file))
+                                    @foreach($list_file as $value)
+                                        <tr>
+                                            <th scope="row">
+                                                <label class="custom-control custom-checkbox m-0 p-0">
+                                                    <input type="checkbox"
+                                                           class="custom-control-input table-select-row">
+                                                    <span class="custom-control-indicator"></span>
+                                                </label>
+                                            </th>
+                                            <td>{{ explode('/', $value['file_name'])[7] }}</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-primary"
+                                                        onclick="window.location='{{ route("annotation.uploadfile2", explode('/', $value['file_name'])[7] )}}'">
+                                                    Annotate
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
                                     <tr>
-                                        <th scope="row">
-                                            <label class="custom-control custom-checkbox m-0 p-0">
-                                                <input type="checkbox" class="custom-control-input table-select-row">
-                                                <span class="custom-control-indicator"></span>
-                                            </label>
-                                        </th>
-                                        <td>{{ explode('/', $value['file_name'])[7] }}</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary"
-                                                    onclick="window.location='{{ route("annotation.uploadfile2", explode('/', $value['file_name'])[7] )}}'">
-                                                Annotate
-                                            </button>
-                                        </td>
+                                        <th></th>
+                                        <td>NO DATA SHOW HERE</td>
+                                        <td></td>
                                     </tr>
-                                @endforeach
+                                @endif
+
                                 </tbody>
                             </table>
                         </div>

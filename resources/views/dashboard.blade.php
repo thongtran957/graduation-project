@@ -17,7 +17,7 @@
                                     Resumes
                                 </h5>
                                 <div class="card-title-sub">
-                                    200
+                                    {{ $count_resume }}
                                 </div>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                                     Labels
                                 </h5>
                                 <div class="card-title-sub">
-                                    10
+                                    {{ $count_label }}
                                 </div>
                             </div>
                         </div>
@@ -40,61 +40,92 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    search
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card mb-grid">
-                        <div class="table-responsive-md">
-                            <table class="table table-condensed">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Text</th>
-                                    <th>Label</th>
-                                    <th>Start</th>
-                                    <th>End</th>
-                                    <th>Resume ID</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($results as $result)
-                                    <tr class="sub-container">
-                                        <td>{{$result->id}}</td>
-                                        <td>{{$result->text}}</td>
-                                        <td>
-                                            <span>{{ $result->name }}</span>
-                                        </td>
-                                        <td>{{$result->start}}</td>
-                                        <td>{{$result->end}}</td>
-                                        <td>{{$result->resume_id}}</td>
-                                        <td>
-                                            <button type="button" class="btn btn-success exploder btn-sm">
-                                                Content
-                                            </button>
-                                        </td>
+                    <form action="{{ route('dashboard.search') }}" method="post">
+                        @csrf
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" placeholder="Search here" id="search"
+                                       name="search">
+                            </div>
+                            <div class="col-sm-3 multiselect">
 
-                                    </tr>
-                                    <tr class="explode hide">
-                                        <td colspan="7" style="background: #CCC; display: none;">
-                                            <pre>{!!$result->content!!}</pre>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                                <div class="form-control selectBox" onclick="showCheckboxes()">
+                                    <select>
+                                        <option>Select labels</option>
+                                    </select>
+                                    <div class="overSelect"></div>
+                                </div>
+                                <div id="checkboxes" class="form-control">
+                                    @foreach($labels as $label)
+                                        <label><input type="checkbox" id="labels{{$label->id}}"
+                                                      name="{{$label->id}}"/>{{$label->name}}</label>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                                <input class="btn btn-primary btn-sm" type="button"
+                                       onclick="location.href='{{route("dashboard.index")}}';"
+                                       value="Reset"/>
+
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    {{ $results->links() }}
+                    </form>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card mb-grid">
+                    <div class="table-responsive-md">
+                        <table class="table table-condensed">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Text</th>
+                                <th>Label</th>
+                                <th>Start</th>
+                                <th>End</th>
+                                <th>Resume ID</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($results as $result)
+                                <tr class="sub-container">
+                                    <td>{{$result->id}}</td>
+                                    <td>{{$result->text}}</td>
+                                    <td>
+                                        <span>{{ $result->name }}</span>
+                                    </td>
+                                    <td>{{$result->start}}</td>
+                                    <td>{{$result->end}}</td>
+                                    <td>{{$result->resume_id}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success exploder btn-sm">
+                                            Content
+                                        </button>
+                                    </td>
+
+                                </tr>
+                                <tr class="explode hide">
+                                    <td colspan="7" style="background: #CCC; display: none;">
+                                        <pre>{!!$result->content!!}</pre>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {{ $results->links() }}
+            </div>
+        </div>
+    </div>
     </div>
     <script>
         $(".exploder").click(function () {
@@ -106,6 +137,19 @@
                 $(this).closest("tr").next("tr").children("td").slideDown(50);
             }
         });
+
+        var expanded = false;
+
+        function showCheckboxes() {
+            var checkboxes = document.getElementById("checkboxes");
+            if (!expanded) {
+                checkboxes.style.display = "block";
+                expanded = true;
+            } else {
+                checkboxes.style.display = "none";
+                expanded = false;
+            }
+        }
     </script>
 @endsection()
 

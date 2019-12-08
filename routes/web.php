@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'DashboardController@index')->name('dashboard.index');
+Route::post('/search', 'DashboardController@search')->name('dashboard.search');
 
 Route::get('/annotation', 'AnnotationController@index')->name('annotation.index');
 Route::post('/annotation', 'AnnotationController@uploadFile')->name('annotation.uploadfile');
