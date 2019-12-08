@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\TrainNerModelJob;
 use App\Models\FileResume;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TrainController extends Controller
 {
@@ -15,16 +17,12 @@ class TrainController extends Controller
 
     public function train($file_train)
     {
-        $cmd = '/usr/bin/python3 /home/thongtran/projects/cv-extraction/train.py' . ' ' . $file_train;
-        $result = shell_exec($cmd);
-        $msg = "Pushing job to train";
-        return view('train', compact('msg'));
-    }
-
-    public function test($path)
-    {
-        $cmd = '/usr/bin/python3 /home/thongtran/projects/cv-extraction/train.py' . ' ' . $path;
-        $result = shell_exec($cmd);
-        dd($result);
+        $file = '/home/thongtran/projects/cv-extraction/trains/' . $file_train;
+        $cmd = '/usr/bin/python3 /home/thongtran/projects/cv-extraction/train.py' . ' ' . $file;
+        DB::table('files')->where('file_name', explode('.', $file)[0] . '.pdf')->update([
+            'train' => 1
+        ]);
+        TrainNerModelJob::dispatch($cmd);
+        return redirect()->route('train.index');
     }
 }

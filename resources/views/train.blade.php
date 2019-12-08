@@ -42,7 +42,7 @@
                                             <td>{{ explode('/', $value['file_name'])[7] }}</td>
                                             <td>
                                                 <button class="btn btn-sm btn-primary"
-                                                        onclick="window.location='{{ route("train.uploadfile",  $value['file_train'])}}'">
+                                                        onclick="window.location='{{ route("train.uploadfile",   explode('/', $value['file_name'])[7])}}'">
                                                     Train
                                                 </button>
                                             </td>

@@ -5,7 +5,7 @@
         <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb adminx-page-breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Train</li>
+                <li class="breadcrumb-item active" aria-current="page">Label</li>
             </ol>
         </nav>
         <div class="row">

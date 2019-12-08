@@ -27,3 +27,4 @@ Route::get('/extraction', 'ExtractionController@index')->name('extraction.index'
 Route::post('/extraction', 'ExtractionController@uploadFile')->name('extraction.uploadfile');
 
 Route::get('/save-json-to-db', 'ProcessController@saveJsonToDb');
+Route::get('/test', 'ProcessController@test');

@@ -2,14 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\TrainNerModelJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ProcessController extends Controller
 {
-    public function saveJsonToDb()
+    public function test()
     {
-
+        $file_json_name = '/home/thongtran/projects/final-project/public/testdata.json';
+        $fh = fopen($file_json_name, 'r');
+        $arr = [];
+        while ($line = fgets($fh)) {
+            $obj = json_decode($line);
+            $content = $obj->content;
+            array_push($arr, $content);
+        }
+        fclose($fh);
+        return view('test', compact('arr'));
     }
 
     public function insertLabel()
@@ -25,7 +35,6 @@ class ProcessController extends Controller
                     DB::table('labels')->insert([
                         'name' => trim($value->label[0])
                     ]);
-
                 }
             }
         }
