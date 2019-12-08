@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('extraction');
-});
+Route::get('/', 'DashboardController@index')->name('dashboard.index');
 
 Route::get('/annotation', 'AnnotationController@index')->name('annotation.index');
 Route::post('/annotation', 'AnnotationController@uploadFile')->name('annotation.uploadfile');
@@ -27,3 +25,4 @@ Route::get('/test/{a}', 'TrainController@test');
 Route::get('/extraction', 'ExtractionController@index')->name('extraction.index');
 Route::post('/extraction', 'ExtractionController@uploadFile')->name('extraction.uploadfile');
 
+Route::get('/save-json-to-db', 'ProcessController@saveJsonToDb');

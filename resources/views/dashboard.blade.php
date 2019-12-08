@@ -14,17 +14,98 @@
                         <div class="card-body d-flex flex-column">
                             <div class="d-flex justify-content-between mb-3">
                                 <h5 class="card-title mb-0">
-                                    Outstanding Invoices
+                                    Resumes
                                 </h5>
                                 <div class="card-title-sub">
-                                    753.82
+                                    200
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 d-flex">
+                    <div class="card mb-grid w-100">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="card-title mb-0">
+                                    Labels
+                                </h5>
+                                <div class="card-title-sub">
+                                    10
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    search
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-grid">
+                        <div class="table-responsive-md">
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Text</th>
+                                    <th>Label</th>
+                                    <th>Start</th>
+                                    <th>End</th>
+                                    <th>Resume ID</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($results as $result)
+                                    <tr class="sub-container">
+                                        <td>{{$result->id}}</td>
+                                        <td>{{$result->text}}</td>
+                                        <td>
+                                            <span>{{ $result->name }}</span>
+                                        </td>
+                                        <td>{{$result->start}}</td>
+                                        <td>{{$result->end}}</td>
+                                        <td>{{$result->resume_id}}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success exploder btn-sm">
+                                                Content
+                                            </button>
+                                        </td>
+
+                                    </tr>
+                                    <tr class="explode hide">
+                                        <td colspan="7" style="background: #CCC; display: none;">
+                                            <pre>{!!$result->content!!}</pre>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ $results->links() }}
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        $(".exploder").click(function () {
+            $(this).toggleClass("btn-success btn-danger");
+            $(this).closest("tr").next("tr").toggleClass("hide");
+            if ($(this).closest("tr").next("tr").hasClass("hide")) {
+                $(this).closest("tr").next("tr").children("td").slideUp(50);
+            } else {
+                $(this).closest("tr").next("tr").children("td").slideDown(50);
+            }
+        });
+    </script>
 @endsection()
 

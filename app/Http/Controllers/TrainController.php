@@ -17,7 +17,8 @@ class TrainController extends Controller
     {
         $cmd = '/usr/bin/python3 /home/thongtran/projects/cv-extraction/train.py' . ' ' . $file_train;
         $result = shell_exec($cmd);
-        dd($result);
+        $msg = "Pushing job to train";
+        return view('train', compact('msg'));
     }
 
     public function test($path)

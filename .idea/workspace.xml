@@ -2,10 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25548ded-ad24-4f0d-bee3-095f7b059433" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/label.balde.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExtractionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExtractionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/extraction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/extraction.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1574961380.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575391326.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575391375.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575391596.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575391654.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575391699.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575395386.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575395692.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575395740.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575395841.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575395940.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401596.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401641.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401696.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401734.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401751.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401758.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401816.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401828.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575401867.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575402195.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575402217.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Elliot-Alderson-Resume-Software-Developer-1-1575402287.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Experienced-Web-Developer-Resume-PDF-Template-1575402915.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/HTML-Web-Developer-Resume-PDF-Free-Download-1575402340.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/HTML-Web-Developer-Resume-PDF-Free-Download-1575402514.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/Jacky-Smith-Resume-Project-Manager-3-1575402439.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -163,7 +190,9 @@
       <workItem from="1574867831641" duration="8802000" />
       <workItem from="1574951006566" duration="10268000" />
       <workItem from="1574997604031" duration="3759000" />
-      <workItem from="1575389285467" duration="6735000" />
+      <workItem from="1575389285467" duration="8934000" />
+      <workItem from="1575421390974" duration="285000" />
+      <workItem from="1575785891118" duration="11293000" />
     </task>
     <servers />
   </component>
