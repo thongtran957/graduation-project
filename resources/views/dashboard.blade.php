@@ -57,8 +57,11 @@
                                 </div>
                                 <div id="checkboxes" class="form-control">
                                     @foreach($labels as $label)
-                                        <label><input type="checkbox" id="labels{{$label->id}}"
-                                                      name="{{$label->id}}"/>{{$label->name}}</label>
+                                        <label style="color: {{$label->color}}; font-weight: bold">
+                                            <input type="checkbox"
+                                                   id="labels{{$label->id}}"
+                                                   name="{{$label->id}}"/>{{$label->name}}
+                                        </label>
                                     @endforeach
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 <div class="adminx-sidebar expand-hover push">
     <ul class="sidebar-nav">
         <li class="sidebar-nav-item">
-            <a href="{{ url('/') }}" class="sidebar-nav-link active">
+            <a href="{{ url('/') }}" class="sidebar-nav-link">
                     <span class="sidebar-nav-icon">
                         <i data-feather="home"></i>
                     </span>
@@ -25,7 +25,7 @@
         <li class="sidebar-nav-item">
             <a href="{{ route('annotation.index') }}" class="sidebar-nav-link">
               <span class="sidebar-nav-icon">
-                <i data-feather="layout"></i>
+                <i data-feather="aperture"></i>
               </span>
                 <span class="sidebar-nav-name">
                 Annotation
@@ -35,10 +35,20 @@
         <li class="sidebar-nav-item">
             <a href="{{ route('train.index') }}" class="sidebar-nav-link">
               <span class="sidebar-nav-icon">
-                <i data-feather="layout"></i>
+                <i data-feather="award"></i>
               </span>
                 <span class="sidebar-nav-name">
                 Train
+              </span>
+            </a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a href="{{ route('train.index') }}" class="sidebar-nav-link">
+              <span class="sidebar-nav-icon">
+                <i data-feather="bar-chart"></i>
+              </span>
+                <span class="sidebar-nav-name">
+                Statistical
               </span>
             </a>
         </li>

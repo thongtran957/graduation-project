@@ -18,6 +18,7 @@ class AnnotationController extends Controller
 
     public function uploadFile(Request $request)
     {
+        $labels = DB::table('labels')->get()->toArray();
         $file = $request->file;
         $arr_file_name = explode('.', $file->getClientOriginalName());
         $file_name = $arr_file_name[0] . '-' . time() . '.' . $arr_file_name[1];
@@ -36,7 +37,7 @@ class AnnotationController extends Controller
             ->setPdf($file_name)
             ->text();
         $content = trim($content);
-        return view('annotation-label', compact('content', 'file_name'));
+        return view('annotation-label', compact('content', 'file_name', 'labels'));
     }
 
     public function uploadFile2($file_name)

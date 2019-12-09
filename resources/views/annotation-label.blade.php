@@ -10,14 +10,10 @@
             </nav>
             <div class="row">
                 <div class="col-lg-12" style="margin-bottom: 15px">
-                    <span class="badge badge-primary">Name</span>
-                    <span class="badge badge-secondary">Graduation Year</span>
-                    <span class="badge badge-success">College Name</span>
-                    <span class="badge badge-danger">Skills</span>
-                    <span class="badge badge-warning">Degree</span>
-                    <span class="badge badge-info">Designation</span>
-                    <span class="badge badge-light">Email Address</span>
-                    <span class="badge badge-dark">Location</span>
+                    @foreach($labels as $label)
+                        <span class="badge"
+                              style="background-color: {{$label->color}}; font-size: 14px">{{$label->name}}</span>
+                    @endforeach
                 </div>
             </div>
             <div class="row">
@@ -31,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4" >
                     <div class="card" style="margin-bottom: 15px">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div class="card-header-title">Label</div>
@@ -39,14 +35,9 @@
                         <div class="card-body collapse show" id="card1">
                             <div class="dropdown" style="margin-bottom: 10px">
                                 <select class="form-control form-control-sm" id="label">
-                                    <option>Name</option>
-                                    <option>Graduation Year</option>
-                                    <option>College Name</option>
-                                    <option>Skills</option>
-                                    <option>Degree</option>
-                                    <option>Designation</option>
-                                    <option>Email Address</option>
-                                    <option>Location</option>
+                                    @foreach($labels as $label)
+                                        <option style="color: {{$label->color}}">{{$label->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div>
@@ -102,34 +93,14 @@
                 this.annotation.push(obj)
                 var content_annotations = ""
                 this.annotation.forEach(function (ele) {
-                    switch (ele.label) {
-                        case "Name":
-                            var content_annotation = '<div><span class="badge badge-primary">' + ele.text_selection + '</span></div>'
-                            break;
-                        case "Graduation Year":
-                            var content_annotation = '<div><span class="badge badge-secondary">' + ele.text_selection + '</span></div>'
-                            break;
-                        case "College Name":
-                            var content_annotation = '<div><span class="badge badge-success">' + ele.text_selection + '</span><div>'
-                            break;
-                        case "Skills":
-                            var content_annotation = '<div><span class="badge badge-danger">' + ele.text_selection + '</span></div>'
-                            break;
-                        case "Degree":
-                            var content_annotation = '<div><span class="badge badge-warning">' + ele.text_selection + '</span></div>'
-                            break;
-                        case "Designation":
-                            var content_annotation = '<div><span class="badge badge-info">' + ele.text_selection + '</span></div>'
-                            break;
-                        case "Email Address":
-                            var content_annotation = '<div><span class="badge badge-dark">' + ele.text_selection + '</span></div>'
-                            break;
-                        case "Location":
-                            var content_annotation = '<div><span class="badge badge-warning">' + ele.text_selection + '</span></div>'
-                            break;
+                        @foreach($labels as $label)
+                        if (ele.label == "{{ $label->name }}") {
+                            var content_annotation = '<div><span class="badge" style="background-color:{{$label->color}}; font-size:14px">' + ele.text_selection + '</span></div>'
+                        }
+                        @endforeach
+                            content_annotations += content_annotation
                     }
-                    content_annotations += content_annotation
-                });
+                )
                 document.getElementById("list-badge").innerHTML = content_annotations
             }
         }
@@ -150,7 +121,7 @@
                     CSRF: '{{ csrf_token() }}'
                 },
                 success: function (data) {
-                    if(data.status == "success"){
+                    if (data.status == "success") {
                         window.location.href = "{{URL::to('/annotation')}}"
                     }
                 },
