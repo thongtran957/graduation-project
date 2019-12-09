@@ -39,7 +39,7 @@ class DashboardController extends Controller
             ->join('labels', 'labels.id', '=', 'content_resumes.label_id')
             ->join('resumes', 'resumes.id', '=', 'content_resumes.resume_id')
             ->select('content_resumes.*', 'resumes.content', 'labels.name', 'labels.color');
-        if (empty($arr_label_id)) {
+        if (!empty($arr_label_id)) {
             $results = $results->whereIn('label_id', $arr_label_id);
         }
         if ($request->search != "") {

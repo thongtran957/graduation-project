@@ -10,6 +10,11 @@ class ProcessController extends Controller
 {
     public function test()
     {
+        $this->setColorForLabel();
+    }
+
+    public function convert_to_pdf()
+    {
         $file_json_name = '/home/thongtran/projects/final-project/public/testdata.json';
         $fh = fopen($file_json_name, 'r');
         $arr = [];
@@ -78,6 +83,29 @@ class ProcessController extends Controller
             }
         }
         fclose($fh);
+    }
+
+    public function setColorForLabel()
+    {
+        $arr_color = [
+            '#E52B50',
+            '#9966CC',
+            '#4F41F8',
+            '#94F841',
+            '#B4C902',
+            '#FF4500',
+            '#FF33F6',
+            '#FF7F50',
+            '#7FFFD4',
+            '#7B3F00',
+            '#008080',
+        ];
+
+        foreach ($arr_color as $key_color => $color) {
+            DB::table('labels')->where('id', $key_color + 1)->update([
+                'color' => $color
+            ]);
+        }
     }
 
 }
