@@ -8,6 +8,13 @@
                     <li class="breadcrumb-item active" aria-current="page">Extraction</li>
                 </ol>
             </nav>
+            @if(isset($msg))
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-lg-12">
+                        {{$msg}}
+                    </div>
+                </div>
+            @endif
             <div class="row" style="margin-bottom: 15px">
                 <div class="col-lg-12">
                     <div class="card">

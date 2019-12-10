@@ -42,15 +42,5 @@
               </span>
             </a>
         </li>
-        <li class="sidebar-nav-item">
-            <a href="{{ route('train.index') }}" class="sidebar-nav-link">
-              <span class="sidebar-nav-icon">
-                <i data-feather="bar-chart"></i>
-              </span>
-                <span class="sidebar-nav-name">
-                Statistical
-              </span>
-            </a>
-        </li>
     </ul>
 </div>

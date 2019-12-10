@@ -12,7 +12,7 @@ class AnnotationController extends Controller
 {
     public function index()
     {
-        $list_file = FileResume::where('annotate', 0)->get()->toArray();
+        $list_file = FileResume::where('annotate', 1)->where('train', 0)->get()->toArray();
         return view('annotation', compact('list_file'));
     }
 
@@ -42,23 +42,6 @@ class AnnotationController extends Controller
         return view('annotation-label', compact('content', 'file_name', 'labels'));
     }
 
-    public function uploadFile2($file_name)
-    {
-        $file_name = '/home/thongtran/projects/final-project/public/files/' . $file_name;
-        $file = FileResume::where('file_name', $file_name)->where('annotate', 0)->get()->toArray();
-
-        if ($file) {
-            $content = (new Pdf())
-                ->setPdf($file_name)
-                ->text();
-            $content = trim($content);
-            return view('annotation-label', compact('content', 'file_name'));
-        } else {
-            $list_file = FileResume::where('annotate', 0)->get()->toArray();
-            return view('annotation', compact('list_file'));
-        }
-    }
-
     public function writeFile(Request $request)
     {
         $file = FileResume::where('file_name', $request->file_name)->where('annotate', 0)->get()->toArray();
@@ -67,12 +50,6 @@ class AnnotationController extends Controller
             $file_train = explode('.', $arr[7])[0] . '.json';
 
             $obj = new \stdClass();
-            $content = trim((new Pdf())
-                ->setPdf($request->file_name)
-                ->text());
-
-            $obj->content = $content;
-
             $annotations = [];
             foreach ($request->data as $annotation) {
                 $obj_annotation = new \stdClass();
