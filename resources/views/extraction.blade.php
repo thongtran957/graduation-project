@@ -28,40 +28,75 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-bottom: 15px">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div class="card-header-title">Execution Time: {{$duration}} </div>
+            @if(isset($msg))
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-lg-12">
+                        {{$msg}}
+                    </div>
+                </div>
+            @endif
+            @if(isset($duration))
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div class="card-header-title">Execution Time: {{$duration}} </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="margin-bottom: 15px">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div class="card-header-title">Result from NER model</div>
-                        </div>
-                        <div class="card-body collapse show" id="card1">
-                            <form>
-                                @foreach($result as $key=>$value)
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label form-label">{{$key}}</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="{{$value}}" name="{{$key}}">
-                                        </div>
-
-                                    </div>
-                                @endforeach
-                                <div class="form-group row">
-                                    <input type="submit">
+            @endif
+            @if(isset($content))
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div class="card-header-title" data-toggle="collapse" data-target="#collapseExample"
+                                     aria-expanded="false" aria-controls="collapseExample">Content resumes
                                 </div>
-                            </form>
+                            </div>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    <pre>{!! $content !!}</pre>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
+            @if(isset($result))
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div class="card-header-title">Result from NER model</div>
+                            </div>
+                            <div class="card-body collapse show" id="card1">
+                                <form method="post" action="{{ route('extraction.savedb') }}">
+                                    @csrf
+                                    @foreach($result as $key=>$value)
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label form-label">{{$key}}</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" value="{{$value}}"
+                                                       name="{{$key}}">
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                    <input type="text" class="form-control" value="{{$content}}"
+                                           name="content" hidden>
+                                    <div class="form-group row">
+                                        <div class="col-lg-2"></div>
+                                        <div class="col-lg-10">
+                                            <input type="submit" class="btn-sm btn-primary" value="Submit">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 @endsection()

@@ -43,4 +43,26 @@ class ExtractionController extends Controller
         return view('extraction', compact('result', 'duration', 'content'));
     }
 
+    public function saveDB(Request $request)
+    {
+        $data = $request->all();
+        foreach ($data as $key => $value) {
+            $label = DB::table('labels')->where('name', trim($key))->first();
+            if (isset($label)) {
+                $resume_id = DB::table('resumes')->insertGetId([
+                    'content' => $data['content'],
+                ]);
+
+                DB::table('result_resumes')->insert([
+                    'resume_id' => $resume_id,
+                    'label_id' => $label->id,
+                    'text' => $value,
+                ]);
+            }
+        }
+
+        $msg = "Save database success";
+        return redirect()->route('extraction.index', compact('msg'));
+    }
+
 }

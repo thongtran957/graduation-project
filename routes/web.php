@@ -30,4 +30,5 @@ Route::get('/test/{a}', 'TrainController@test');
 
 Route::get('/extraction', 'ExtractionController@index')->name('extraction.index');
 Route::post('/extraction', 'ExtractionController@uploadFile')->name('extraction.uploadfile');
+Route::post('/extraction-savedb', 'ExtractionController@saveDB')->name('extraction.savedb');
 Route::get('/home', 'HomeController@index')->name('home');
