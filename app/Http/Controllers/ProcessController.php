@@ -10,7 +10,9 @@ class ProcessController extends Controller
 {
     public function test()
     {
-        $this->setColorForLabel();
+//        $this->insertLabel();
+//        $this->insertResume();
+//        $this->setColorForLabel();
     }
 
     public function convert_to_pdf()
@@ -56,7 +58,7 @@ class ProcessController extends Controller
     public function insertResume()
     {
         DB::table('resumes')->truncate();
-        DB::table('content_resumes')->truncate();
+        DB::table('result_resumes')->truncate();
         $file_json_name = '/home/thongtran/projects/final-project/public/traindata.json';
         $fh = fopen($file_json_name, 'r');
         while ($line = fgets($fh)) {
@@ -71,10 +73,8 @@ class ProcessController extends Controller
                 if (isset($value->label[0])) {
                     $label_id = DB::table('labels')->where('name', $value->label[0])->pluck('id')->toArray()[0];
                     $point = $value->points[0];
-                    DB::table('content_resumes')->insert([
+                    DB::table('result_resumes')->insert([
                         'text' => $point->text,
-                        'start' => $point->start,
-                        'end' => $point->end,
                         'resume_id' => $resume_id,
                         'label_id' => $label_id,
                     ]);

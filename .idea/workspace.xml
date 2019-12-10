@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25548ded-ad24-4f0d-bee3-095f7b059433" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AnnotationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AnnotationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExtractionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExtractionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProcessController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProcessController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/label.balde.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/label.balde.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/train.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/train.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_28_143556_files.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_08_081720_create_resumes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_08_081720_create_resumes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_08_081740_create_content_resumes_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_08_150635_create_test_trains_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/annotation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annotation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/extraction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/extraction.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -171,6 +178,10 @@
       <workItem from="1575389285467" duration="8934000" />
       <workItem from="1575421390974" duration="285000" />
       <workItem from="1575785891118" duration="17411000" />
+      <workItem from="1575899175684" duration="939000" />
+      <workItem from="1575907371177" duration="328000" />
+      <workItem from="1575969254148" duration="5098000" />
+      <workItem from="1575982535998" duration="3202000" />
     </task>
     <servers />
   </component>

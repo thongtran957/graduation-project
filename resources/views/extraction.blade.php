@@ -32,10 +32,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <div class="card-header-title">Result from regular expression</div>
-                        </div>
-                        <div class="card-body collapse show" id="card1">
-                            <pre>{!! $result_main ?? '' !!}</pre>
+                            <div class="card-header-title">Execution Time: {{$duration}} </div>
                         </div>
                     </div>
                 </div>
@@ -47,12 +44,24 @@
                             <div class="card-header-title">Result from NER model</div>
                         </div>
                         <div class="card-body collapse show" id="card1">
-                            <pre>{!! $result_NER ?? '' !!}</pre>
+                            <form>
+                                @foreach($result as $key=>$value)
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label form-label">{{$key}}</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="{{$value}}" name="{{$key}}">
+                                        </div>
+
+                                    </div>
+                                @endforeach
+                                <div class="form-group row">
+                                    <input type="submit">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection()

@@ -87,8 +87,6 @@
                                 <th>#</th>
                                 <th>Text</th>
                                 <th>Label</th>
-                                <th>Start</th>
-                                <th>End</th>
                                 <th>Resume ID</th>
                                 <th>Action</th>
                             </tr>
@@ -101,8 +99,6 @@
                                     <td>
                                         <span>{{ $result->name }}</span>
                                     </td>
-                                    <td>{{$result->start}}</td>
-                                    <td>{{$result->end}}</td>
                                     <td>{{$result->resume_id}}</td>
                                     <td>
                                         <button type="button" class="btn btn-success exploder btn-sm">

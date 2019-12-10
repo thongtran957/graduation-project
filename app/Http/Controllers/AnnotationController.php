@@ -25,18 +25,20 @@ class AnnotationController extends Controller
         $file->move('files', $file_name);
         $file_name = '/home/thongtran/projects/final-project/public/files/' . $file_name;
 
+        $content = (new Pdf())
+            ->setPdf($file_name)
+            ->text();
+        $content = trim($content);
+
         DB::table('files')->insert(
             [
                 'file_name' => $file_name,
                 'annotate' => 0,
                 'train' => 0,
+                'content' => $content,
             ]
         );
 
-        $content = (new Pdf())
-            ->setPdf($file_name)
-            ->text();
-        $content = trim($content);
         return view('annotation-label', compact('content', 'file_name', 'labels'));
     }
 
@@ -81,7 +83,18 @@ class AnnotationController extends Controller
                 $obj_points->text = $annotation['text_selection'];
                 $obj_annotation->points = [$obj_points];
                 array_push($annotations, $obj_annotation);
+
+                $label_id = DB::table('labels')->where('name', $annotation['label'])->select('id')->first();
+
+                DB::table('content_file_trains')->insert([
+                    'file_id' => $file[0]['id'],
+                    'label_id' => $label_id->id,
+                    'text' => $annotation['text_selection'],
+                    'start' => (int)$annotation['start'],
+                    'end' => (int)$annotation['end'],
+                ]);
             }
+
             $obj->annotation = $annotations;
 
             $file_json_name = '/home/thongtran/projects/final-project/public/files/' . $file_train;

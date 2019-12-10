@@ -13,10 +13,10 @@ class DashboardController extends Controller
         $count_label = DB::table('labels')->get()->count();
         $labels = DB::table('labels')->get()->toArray();
 
-        $results = DB::table('content_resumes')
-            ->join('labels', 'labels.id', '=', 'content_resumes.label_id')
-            ->join('resumes', 'resumes.id', '=', 'content_resumes.resume_id')
-            ->select('content_resumes.*', 'resumes.content', 'labels.name', 'labels.color')
+        $results = DB::table('result_resumes')
+            ->join('labels', 'labels.id', '=', 'result_resumes.label_id')
+            ->join('resumes', 'resumes.id', '=', 'result_resumes.resume_id')
+            ->select('result_resumes.*', 'resumes.content', 'labels.name', 'labels.color')
             ->paginate(10);
         return view("dashboard", compact('results', 'count_resume', 'count_label', 'labels'));
     }
@@ -35,10 +35,10 @@ class DashboardController extends Controller
                 array_push($arr_label_id, $key);
             };
         }
-        $results = DB::table('content_resumes')
-            ->join('labels', 'labels.id', '=', 'content_resumes.label_id')
-            ->join('resumes', 'resumes.id', '=', 'content_resumes.resume_id')
-            ->select('content_resumes.*', 'resumes.content', 'labels.name', 'labels.color');
+        $results = DB::table('result_resumes')
+            ->join('labels', 'labels.id', '=', 'result_resumes.label_id')
+            ->join('resumes', 'resumes.id', '=', 'result_resumes.resume_id')
+            ->select('result_resumes.*', 'resumes.content', 'labels.name', 'labels.color');
         if (!empty($arr_label_id)) {
             $results = $results->whereIn('label_id', $arr_label_id);
         }

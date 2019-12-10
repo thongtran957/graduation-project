@@ -11,6 +11,11 @@
 |
 */
 
+
+
+Route::get('/test', 'ProcessController@test');
+
+Auth::routes();
 Route::get('/', 'DashboardController@index')->name('dashboard.index');
 Route::post('/search', 'DashboardController@search')->name('dashboard.search');
 
@@ -25,5 +30,4 @@ Route::get('/test/{a}', 'TrainController@test');
 
 Route::get('/extraction', 'ExtractionController@index')->name('extraction.index');
 Route::post('/extraction', 'ExtractionController@uploadFile')->name('extraction.uploadfile');
-
-Route::get('/test', 'ProcessController@test');
+Route::get('/home', 'HomeController@index')->name('home');
