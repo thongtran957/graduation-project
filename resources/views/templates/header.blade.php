@@ -60,10 +60,10 @@
         </div>
         <ul class="navbar-nav d-flex justify-content-end mr-2">
             <li class="nav-item dropdown">
-                <a class="nav-link avatar-with-name" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#">
-                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg"
+                <div class="nav-link avatar-with-name" id="navbarDropdownMenuLink">
+                    <img src="{{asset('avarta.jpeg')}}"
                          class="d-inline-block align-top" alt="">
-                </a>
+                </div>
             </li>
         </ul>
     </nav>

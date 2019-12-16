@@ -58,7 +58,10 @@
                                                         @foreach($value['content_file_trains'] as $a)
                                                             <div>
                                                                 <span class="badge"
-                                                                      style="background-color: {{$a->color}}; font-size: 14px">
+                                                                      style="background-color: {{$a->color}}; font-size: 14px; width: 350px;
+                                                                          overflow: hidden;
+                                                                          white-space: nowrap;
+                                                                          text-overflow: ellipsis;">
                                                                     {{$a->name}} : {{$a->text}}
                                                                 </span>
                                                             </div>

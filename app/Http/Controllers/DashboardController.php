@@ -17,6 +17,7 @@ class DashboardController extends Controller
             ->join('labels', 'labels.id', '=', 'result_resumes.label_id')
             ->join('resumes', 'resumes.id', '=', 'result_resumes.resume_id')
             ->select('result_resumes.*', 'resumes.content', 'labels.name', 'labels.color')
+            ->orderBy('id', 'desc')
             ->paginate(10);
         return view("dashboard", compact('results', 'count_resume', 'count_label', 'labels'));
     }
@@ -45,7 +46,7 @@ class DashboardController extends Controller
         if ($request->search != "") {
             $results = $results->where('text', 'LIKE', '%' . $request->search . '%');
         }
-        $results = $results->paginate(10);
+        $results = $results->orderBy('id', 'desc')->paginate(10);
         return view("dashboard", compact('results', 'count_resume', 'count_label', 'labels'));
     }
 }

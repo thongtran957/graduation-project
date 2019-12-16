@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="25548ded-ad24-4f0d-bee3-095f7b059433" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AnnotationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AnnotationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/annotation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annotation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/extraction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/extraction.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/annotation-label.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annotation-label.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/templates/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/train.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/train.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +171,9 @@
       <workItem from="1575907371177" duration="328000" />
       <workItem from="1575969254148" duration="5098000" />
       <workItem from="1575982535998" duration="5783000" />
-      <workItem from="1575996025895" duration="3572000" />
+      <workItem from="1575996025895" duration="3650000" />
+      <workItem from="1576414275225" duration="3206000" />
+      <workItem from="1576475867173" duration="248000" />
     </task>
     <servers />
   </component>

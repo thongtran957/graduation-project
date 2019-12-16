@@ -12,7 +12,7 @@
                 <div class="col-lg-12" style="margin-bottom: 15px">
                     @foreach($labels as $label)
                         <span class="badge"
-                              style="background-color: {{$label->color}}; font-size: 14px">{{$label->name}}</span>
+                              style="background-color: {{$label->color}}; font-size: 14px; ">{{$label->name}}</span>
                     @endforeach
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" >
+                <div class="col-lg-4">
                     <div class="card" style="margin-bottom: 15px">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div class="card-header-title">Label</div>
@@ -95,7 +95,10 @@
                 this.annotation.forEach(function (ele) {
                         @foreach($labels as $label)
                         if (ele.label == "{{ $label->name }}") {
-                            var content_annotation = '<div><span class="badge" style="background-color:{{$label->color}}; font-size:14px">' + ele.text_selection + '</span></div>'
+                            var content_annotation = '<div><span class="badge" style="background-color:{{$label->color}}; font-size:14px;  width: 300px;\n' +
+                                '                                                                          overflow: hidden;\n' +
+                                '                                                                          white-space: nowrap;\n' +
+                                '                                                                          text-overflow: ellipsis;">' + ele.text_selection + '</span></div>'
                         }
                         @endforeach
                             content_annotations += content_annotation
