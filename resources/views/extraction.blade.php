@@ -90,7 +90,7 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                    <input type="text" class="form-control" value="{{$content}}"
+                                    <input type="text" class="form-control" value="{!! $content !!}"
                                            name="content" hidden>
                                     <div class="form-group row">
                                         <div class="col-lg-2"></div>

@@ -46,13 +46,13 @@ class ExtractionController extends Controller
     public function saveDB(Request $request)
     {
         $data = $request->all();
+        $resume_id = DB::table('resumes')->insertGetId([
+            'content' => $data['content'],
+        ]);
+
         foreach ($data as $key => $value) {
             $label = DB::table('labels')->where('name', trim($key))->first();
             if (isset($label)) {
-                $resume_id = DB::table('resumes')->insertGetId([
-                    'content' => $data['content'],
-                ]);
-
                 DB::table('result_resumes')->insert([
                     'resume_id' => $resume_id,
                     'label_id' => $label->id,
