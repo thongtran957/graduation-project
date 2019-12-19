@@ -25,11 +25,12 @@ class TrainController extends Controller
 
     public function train($file_train)
     {
-        $file = '/home/thongtran/projects/cv-extraction/trains/' . $file_train;
-        $cmd = '/usr/bin/python3 /home/thongtran/projects/cv-extraction/train.py' . ' ' . $file;
-        DB::table('files')->where('file_name', explode('.', $file)[0] . '.pdf')->update([
+        $file = '/home/thongtran/projects/final-project/public/files/' . $file_train;
+
+        DB::table('files')->where('file_name', $file)->update([
             'train' => 1
         ]);
+        $cmd = '/usr/bin/python3 /home/thongtran/projects/cv-extraction/train.py' . ' ' . $file;
         TrainNerModelJob::dispatch($cmd);
         return redirect()->route('train.index');
     }

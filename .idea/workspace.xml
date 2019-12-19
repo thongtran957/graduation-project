@@ -3,11 +3,72 @@
   <component name="ChangeListManager">
     <list default="true" id="25548ded-ad24-4f0d-bee3-095f7b059433" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/annotation-label.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/annotation-label.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/train.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/train.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575982750.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575982837.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575982857.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575982891.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575982949.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575982961.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575982971.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575982985.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575983027.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575983036.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575983100.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575983118.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575995673.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575995673.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575998006.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1575998006.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1576121260.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1576121260.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1576415165.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1576415165.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1576416626.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test1-converted-1576417339.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test2-converted-1576121304.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test2-converted-1576415319.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test2-converted-1576415319.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test2-converted-1576416539.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test2-converted-1576416539.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test2-converted-1576416568.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test2-converted-1576416568.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test3-converted-1576415377.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test3-converted-1576415377.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test3-converted-1576416853.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983246.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983344.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983439.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983576.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983611.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983633.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983650.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983723.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983897.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983907.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575983929.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575984395.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575984414.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575985539.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575985561.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575985598.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test4-converted-1575985742.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test5-converted-1576415866.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test5-converted-1576416081.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test5-converted-1576416102.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test5-converted-1576416989.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test5-converted-1576416989.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test5-converted-1576417062.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test5-converted-1576417062.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test6-converted-1576121374.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test7-converted-1575993744.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test7-converted-1575993991.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test7-converted-1575994015.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test7-converted-1575994079.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test7-converted-1575994118.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test7-converted-1575994176.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test7-converted-1575994435.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/files/resume_test7-converted-1575995353.pdf" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +234,8 @@
       <workItem from="1575982535998" duration="5783000" />
       <workItem from="1575996025895" duration="3650000" />
       <workItem from="1576414275225" duration="3206000" />
-      <workItem from="1576475867173" duration="248000" />
+      <workItem from="1576475867173" duration="848000" />
+      <workItem from="1576515447325" duration="827000" />
     </task>
     <servers />
   </component>
