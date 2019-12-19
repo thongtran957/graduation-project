@@ -90,8 +90,8 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                    <input type="text" class="form-control" value="{{$content}}"
-                                           name="content" hidden>
+                                    <input type="text" class="form-control" value="{{$file_name}}"
+                                           name="file_name" hidden>
                                     <div class="form-group row">
                                         <div class="col-lg-2"></div>
                                         <div class="col-lg-10">

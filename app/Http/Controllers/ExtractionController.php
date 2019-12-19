@@ -40,19 +40,24 @@ class ExtractionController extends Controller
             }
         }
 
-        return view('extraction', compact('result', 'duration', 'content'));
+        return view('extraction', compact('result', 'duration', 'file_name', 'content'));
     }
 
     public function saveDB(Request $request)
     {
         $data = $request->all();
+
+        $content = trim((new Pdf())
+            ->setPdf($data['file_name'])
+            ->text());
+
+        $resume_id = DB::table('resumes')->insertGetId([
+            'content' => $content,
+        ]);
+
         foreach ($data as $key => $value) {
             $label = DB::table('labels')->where('name', trim($key))->first();
             if (isset($label)) {
-                $resume_id = DB::table('resumes')->insertGetId([
-                    'content' => $data['content'],
-                ]);
-
                 DB::table('result_resumes')->insert([
                     'resume_id' => $resume_id,
                     'label_id' => $label->id,
